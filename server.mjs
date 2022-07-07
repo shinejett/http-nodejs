@@ -1,6 +1,8 @@
 import { createServer } from 'http';
 
 createServer((req, res) => {
-  res.write('Welcome to my app');
+  let method = req.method;
+  let headers = req.headers;
+  res.write('Welcome to my app' + method + headers);
   res.end();
 }).listen(process.env.PORT);
